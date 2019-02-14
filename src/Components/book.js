@@ -1,30 +1,38 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Col from 'react-bootstrap/Col';
 import '../style.css';
 
-class Book extends Component {
-  
-  constructor(){
-    super()
-    this.state = {
-
-    }
-  }
- 
-  render() {
+function Book(props){
+  if(props.book.flipped===false){
     return (
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
+      <Col md={6}>
+        <div className="flip-card" onClick ={() => props.handleClick(props.book.id)}>
+            <div className="flip-card-inner">
+                <div className="flip-card-front">
+                  <h1>{props.book.title}</h1> 
                 </div>
-                <div class="flip-card-back">
-                <h1>John Doe</h1> 
-                <p>Architect & Engineer</p> 
-                <p>We love that guy</p>
+                <div className="flip-card-back">
+                      <h1>{props.book.description}</h1> 
                 </div>
             </div>
-        </div>
+          </div>
+      </Col>
     );
+  }else{
+        return (
+          <Col md={6}>
+            <div className="flip-card flip-it" onClick ={() => props.handleClick(props.book.id)}>
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    <h1>{props.book.title}</h1> 
+                  </div>
+                    <div className="flip-card-back">
+                      <h1>{props.book.description}</h1> 
+                    </div>
+                </div>
+            </div>
+          </Col>
+      );
   }
 }
-
 export default Book;
