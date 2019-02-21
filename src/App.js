@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import Footer from './Components/footer';
 import Book from './Components/book';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import ThreeBooks from './Components/threeBooks';
+import Container from 'react-bootstrap/Container'
 import bookData from './bookData';
-import './App.css';
 
 
 class App extends Component {
@@ -15,7 +14,8 @@ class App extends Component {
     this.state = {
         books: bookData
     }
-    this.handleClick =this.handleClick.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+    this.listThem = this.listThem.bind(this);
   }
 
   handleClick(id){
@@ -33,16 +33,27 @@ class App extends Component {
     })
   }
 
+  listThem(array){
+    let newArray = []
+    let size = 3;
+    
+    while(array.length>0){
+        newArray.push(array.splice(0, size));
+      }
+    return newArray
+  }
+
   render() {
-    const bookList = this.state.books.map((book) => <Book key= {book.id} book={book} handleClick = {this.handleClick} />);
+    const bookList = this.state.books.map((book) => <Book key = {book.id} book={book} handleClick = {this.handleClick} />);
+    const orderedList = this.listThem(bookList);
+    console.log(orderedList)
+    const threes = orderedList.map((books, index) => <ThreeBooks key = {index} books = {books} />);
 
 
     return (
       <div className="App">
         <Container>
-          <Row>
-            {bookList}
-          </Row>
+            {threes}
         </Container>
         <Footer/>
       </div>

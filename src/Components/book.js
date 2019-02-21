@@ -5,7 +5,7 @@ import '../style.css';
 function Book(props){
   if(props.book.flipped===false){
     return (
-      <Col md={6}>
+      <Col  xs ={1} md={3} lg={4}>
         <div className="flip-card" onClick ={() => props.handleClick(props.book.id)}>
             <div className="flip-card-inner">
                 <div className="flip-card-front">
@@ -20,7 +20,7 @@ function Book(props){
     );
   }else{
         return (
-          <Col md={6}>
+          <Col xs={1} md={3} lg={4}>
             <div className="flip-card flip-it" onClick ={() => props.handleClick(props.book.id)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">

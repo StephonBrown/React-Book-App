@@ -28,6 +28,12 @@ const bookData = [
         title: "Catch up on Arrested Development",
         description: "This is a book",
         flipped: false
+    },
+    {
+        id: 6,
+        title: "Eat Pizza",
+        description: "This is a book",
+        flipped: false
     }
 ]
 
