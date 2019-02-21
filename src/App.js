@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Footer from './Components/footer';
 import Book from './Components/book';
 import ThreeBooks from './Components/threeBooks';
-import Container from 'react-bootstrap/Container'
+import Container from 'react-bootstrap/Container';
 import bookData from './bookData';
+import Nav from './Components/navbar';
 
 
 class App extends Component {
@@ -52,7 +53,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Container>
+        <Nav/>
+        <Container className="bookshelf">
             {threes}
         </Container>
         <Footer/>

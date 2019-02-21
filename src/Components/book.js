@@ -6,7 +6,7 @@ function Book(props){
   if(props.book.flipped===false){
     return (
       <Col  xs ={1} md={3} lg={4}>
-        <div className="flip-card" onClick ={() => props.handleClick(props.book.id)}>
+        <div className="flip-card paper" onClick ={() => props.handleClick(props.book.id)}>
             <div className="flip-card-inner">
                 <div className="flip-card-front">
                   <h1>{props.book.title}</h1> 
@@ -21,7 +21,7 @@ function Book(props){
   }else{
         return (
           <Col xs={1} md={3} lg={4}>
-            <div className="flip-card flip-it" onClick ={() => props.handleClick(props.book.id)}>
+            <div className="flip-card flip-it paper" onClick ={() => props.handleClick(props.book.id)}>
                 <div className="flip-card-inner">
                   <div className="flip-card-front">
                     <h1>{props.book.title}</h1> 
